@@ -11,4 +11,6 @@ module.exports = app => {
   router.get('/news', controller.news.list);//"http://localhost:9008/news"
   router.get('/router', controller.controllerRouter.routerParam_norest);//"http://localhost:9008/router?name=xiaohong"
   router.get('/router_rest/:name', controller.controllerRouter.routerParam_rest);//"http://localhost:9008/router_rest/123"
+  //2.resources快速配置路由
+  router.resources('users','/user', controller.userController);
 };

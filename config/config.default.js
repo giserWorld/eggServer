@@ -23,12 +23,28 @@ module.exports = appInfo => {
     // myAppName: 'egg',
   };
 
-  //视图模板引擎
+//*****1.配置视图模板引擎*****//
   config.view = {
     defaultViewEngine: 'nunjucks',
     mapping: {
       '.tpl': 'nunjucks',
     },
+  };
+//*****2.配置ORM连接数据库*****//
+  config.sequelize = {
+    dialect:'postgres',//方言,support: mysql, mariadb, postgres, mssql
+    host:'localhost',
+    database:'javadb',
+    port:'5432',
+    username:'postgres',
+    password:'123456',
+    timezone:'+08:00',
+    logging:console.log,//日志
+    pool:{//连接池
+      max:5,
+      min:0,
+      idle: 10000,
+    }
   };
 
   return {
