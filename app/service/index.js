@@ -2,12 +2,16 @@
 
 const Controller = require('egg').Controller;
 
-class HomeController extends Controller {
+/*****************************index***************************
+*1.
+*/
+class indexController extends Controller {
   //欢迎页面
   async index() {
     const { ctx } = this;
     ctx.body = 'hi, egg';
   }
-}
+  
+}//e
 
-module.exports = HomeController;
+module.exports=indexController;
